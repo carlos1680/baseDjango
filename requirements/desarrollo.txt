@@ -1,0 +1,2 @@
+-r comun.txt
+django-debug-toolbar==2.2

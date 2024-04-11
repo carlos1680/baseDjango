@@ -172,3 +172,7 @@ cython_debug/
 #.idea/
 
 # End of https://www.toptal.com/developers/gitignore/api/django
+
+
+# para que no suba el archivo de claves del entorno
+.env 
