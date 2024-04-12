@@ -1,0 +1,83 @@
+Segunguia de tutz-tv (videos de youtube)
+## Estructura basica
+Carpeta del proyecto
+mkdir Capacitate
+## Entornos virtuales
+#Windows
+    python -m venv .env
+    .\.env\Scripts\activate
+
+    .\.env\Scripts\deactivate
+
+#Linux
+    python -m venv .env
+    source ./.env/activate
+
+    deactivate
+
+## Packages
+    pip install django
+
+##Creacion del proyecto django
+    django-admin startproject web
+
+    #Cambiar el nombre de la carpeta web/web a web/config
+    mkdir web/apps
+    cd apps
+    Crear archivo __init__.py (Para que sepa que tiene moludos importables)
+    mkdir web/static
+    mkdir web/static/css
+    mkdir web/static/js
+    mkdir web/static/img
+
+    mkdir web/templates
+    mkdir web/media
+    mkdir web/docs
+    mkdir web/tests
+
+    Crear archivos
+    web/.gitignore
+    web/requirements.txt
+
+
+Luego de crear el repositorio en github:
+baseDjango
+    sin readme
+    sin .gitignore
+    sin licencia
+    public
+
+luego en el pc:
+en la carpeta web
+git init
+git add .
+git commit -m "Mi base"
+git remote add origin https://github.com/carlos1680/baseDjango.git
+git push origin master
+
+
+
+## Para crear aplicaciones 
+pararse en la carpeta de apps
+cd apps
+python ..\manage.py startapp usuarios
+python ..\manage.py startapp core
+
+## Ejecutar el proyecto
+    python manage.py runserver
+    python manage.py runserver --settings=config.settings.local 
+
+
+## PAra variables de Entornos
+#Ejemplo en config.settings.comun.py
+    import os
+    MI_PATH = os.getenv("PATH")
+    print("-->",MI_PATH)
+#Usando librerias
+pip install python-dotenv
+
+
+
+## Para usar diferentes librerias segun el entorno y el archivo requirements.txt correspondiente
+# Ejemplo
+pip install -r .\requirements\desarrollo.txt
