@@ -26,8 +26,10 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 
 MI_PATH = os.getenv("PATH")
 PRUENAENV = os.getenv("PRUENAENV")
-print("-->",MI_PATH)
-print("-->",PRUENAENV)
+#print("-->",MI_PATH)
+#print("-->",PRUENAENV)
+print("Base_DIR: ", BASE_DIR)
+print("Base_DIR: ", BASE_DIR.parent / 'templates')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -62,7 +64,9 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR.parent / 'templates',
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -124,6 +128,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [BASE_DIR.parent /'static']
+
+MEDIA_URL = 'media/'
+MEDIA_ROOT = BASE_DIR.parent / 'media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
