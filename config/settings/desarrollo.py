@@ -1,2 +1,2 @@
 from .comun import *
-DEBUG=True
+DEBUG = True
