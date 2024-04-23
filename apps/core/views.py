@@ -7,7 +7,7 @@ from django.contrib.auth import logout
 
 
 def index(request):
-    template = loader.get_template('core/base.html')
+    template = loader.get_template('core/baseCore.html')
     return HttpResponse(template.render())
 
 def home(request):
