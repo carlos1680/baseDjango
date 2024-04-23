@@ -15,8 +15,8 @@ def home(request):
     return HttpResponse(template.render())
 
 @login_required
-def products(request):
-    return render(request, 'core/products.html')
+def dashboard(request):
+    return render(request, 'core/dashboard.html')
 
 def exit(request):
     logout(request)
